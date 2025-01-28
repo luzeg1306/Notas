@@ -1,0 +1,28 @@
+Operadores de cálculo
+
+var a: Int = 5 + 5  //10
+var b: Int = 10 - 2 //8
+var c: Int = 3 * 4  //12
+var d: Int = 10 / 5 //2
+var e: Int = 10 % 3 //1 no se puede dividir, se queda con el resto
+var f: Int = 10 / 6 //1 división infinita, se mantiene la parte entera
+
+Incrementos y decrementos
+
+println(++a)
+println(a)   //Incrementa y regresa
+Al incrementar la variable esta se modifica
+
+println(--a)
+println(a)   //al decrementar la variable esta se modifica
+
+println(a++)
+println(a)   //Regresa e incrementa
+Al incrementar la variable esta se modifica
+
+println(a--)
+println(a)   //al decrementar la variable esta se modifica
+
+a += b
+
+a++
