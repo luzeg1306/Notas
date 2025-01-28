@@ -1,0 +1,59 @@
+# Uso de WindowInsets en Android
+
+Un **inset** en Android se refiere al espacio ocupado por elementos del sistema, como la barra de estado, la barra de navegación o el notch. Los **insets** permiten ajustar el diseño de la aplicación para respetar estos espacios y evitar superposiciones.
+
+---
+
+## Tipos comunes de insets en Android
+
+1. **`systemBars`**:
+   - Representa las barras del sistema:
+     - Barra de estado (status bar) en la parte superior.
+     - Barra de navegación (navigation bar) en la parte inferior.
+   - Útil para ajustar márgenes o paddings.
+
+2. **`displayCutout`**:
+   - Representa el espacio ocupado por un notch o una cámara perforada.
+
+3. **`ime` (Input Method Editor):**
+   - Representa el espacio ocupado por el teclado virtual.
+
+4. **`tappableElement`**:
+   - Representa áreas interactuables, como botones de navegación o controles de gestos.
+
+---
+
+## Uso de WindowInsets en Kotlin
+
+El objeto **`WindowInsets`** o su compatibilidad **`WindowInsetsCompat`** se utiliza para manejar márgenes relacionados con los insets. El siguiente ejemplo muestra cómo ajustar el padding de una vista en función de los insets:
+
+```kotlin
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsCompat.Type
+
+ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+    val systemBarsInsets = insets.getInsets(Type.systemBars())
+    v.setPadding(
+        systemBarsInsets.left,
+        systemBarsInsets.top,
+        systemBarsInsets.right,
+        systemBarsInsets.bottom
+    )
+    insets
+}
+```
+
+---
+
+## Resultado
+
+Este código asegura que el contenido de la aplicación respete los márgenes ocupados por las barras del sistema u otras áreas no disponibles de la pantalla. Es especialmente útil en dispositivos con:
+
+- **Notch**
+- **Barras de navegación gestual**
+- **Teclado virtual activado**
+
+### Nota
+
+Asegúrate de probar este código en dispositivos con distintas configuraciones de pantalla para verificar que los márgenes se ajusten correctamente. Si deseas realizar un manejo más avanzado, puedes combinar varios tipos de insets utilizando `Type` en el método `getInsets`.
