@@ -1,4 +1,6 @@
 Variables, valores y constantes
+Globales: Accesibles dentro de todo el código
+Locales: Accesibles solo en una parte de código
 
 const val moneda = "EUR" - No puede ser reasignado ni crearse de manera local. 
 Se especifica dentro de companion object.
