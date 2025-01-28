@@ -1,0 +1,20 @@
+Estructuras de control
+
+*IF
+if (vip == true) saludo += ", te queremos mucho"
+else saludo += ", quieres ser vip? paga la cuota"
+
+if (vip == true) {
+    saludo += ", te queremos mucho"
+
+
+}
+else {
+     saludo += ", quieres ser vip? paga la cuota"
+
+
+            
+}
+
+
+*WHEN
