@@ -1,0 +1,15 @@
+Diferencia entre val y const
+En Kotlin, tanto val como const se utilizan para declarar valores inmutables, lo que significa que una vez que se les asigna un valor, no se puede cambiar. Sin embargo, hay una diferencia fundamental entre val y const en términos de su comportamiento y uso.
+
+val: La palabra clave val se utiliza para declarar una variable inmutable. Esto significa que una vez que se asigna un valor a una variable val, no se puede cambiar a lo largo de su ciclo de vida. Sin embargo, el valor puede ser evaluado en tiempo de ejecución, lo que permite que se determine en función de condiciones o cálculos en ese momento. Por lo tanto, el valor de una variable val no necesita ser conocido en tiempo de compilación.
+
+kotlin
+val pi = 3.14159
+val circleArea = pi * radius * radius
+const: La palabra clave const se utiliza para declarar valores constantes que se evalúan en tiempo de compilación y se almacenan como valores literales en el código generado. Esto significa que el valor asignado a una constante debe ser conocido en tiempo de compilación y no puede depender de cálculos en tiempo de ejecución ni de variables.
+
+kotlin
+const val pi = 3.14159
+const val radius = 5.0
+const val circleArea = pi * radius * radius // Esto generará un error, ya que radius es una constante y su valor debe ser conocido en tiempo de compilación.
+En resumen, val se utiliza para declarar variables inmutables cuyos valores se conocen en tiempo de ejecución y pueden depender de cálculos o condiciones, mientras que const se utiliza para declarar constantes cuyos valores deben ser conocidos en tiempo de compilación y se almacenan directamente como literales en el código generado. Las constantes declaradas con const son más eficientes en términos de rendimiento, ya que su valor se resuelve en tiempo de compilación, evitando cálculos en tiempo de ejecución.
