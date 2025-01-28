@@ -1,0 +1,22 @@
+Operadores de comparación
+
+a == b
+a != b
+a > b
+a < b
+a >= b
+a <= b
+        
+var res  = true
+res = a == b
+println(res)
+res = a != b
+println(res)
+res = a > b
+println(res)
+res = a < b
+println(res)
+res = a >= b
+println(res)
+res = a <= b
+println(res)
