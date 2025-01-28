@@ -1,39 +1,34 @@
-# Uso de WindowInsets en Android
+En **Android**, un **inset** se refiere al espacio que ocupa un elemento del sistema, como la barra de estado, la barra de navegación, el notch, o cualquier área que limita el espacio disponible en la pantalla para el contenido de la aplicación. Estos insets ayudan a las aplicaciones a ajustar su diseño para que no se superpongan con estas zonas del sistema.
 
-Un **inset** en Android se refiere al espacio ocupado por elementos del sistema, como la barra de estado, la barra de navegación o el notch. Los **insets** permiten ajustar el diseño de la aplicación para respetar estos espacios y evitar superposiciones.
+### Contexto en Android
+En dispositivos modernos con pantallas completas (sin bordes), es común que ciertas áreas de la pantalla estén ocupadas por elementos del sistema. Los **insets** indican estas áreas para que los desarrolladores puedan diseñar interfaces que respeten esos espacios y mantengan el contenido visible y funcional.
 
 ---
 
-## Tipos comunes de insets en Android
-
+### Tipos comunes de insets en Android:
 1. **`systemBars`**:
-   - Representa las barras del sistema:
+   - Representa las barras del sistema, como:
      - Barra de estado (status bar) en la parte superior.
      - Barra de navegación (navigation bar) en la parte inferior.
-   - Útil para ajustar márgenes o paddings.
+   - Útil para ajustar márgenes o paddings para que el contenido no quede oculto.
 
 2. **`displayCutout`**:
-   - Representa el espacio ocupado por un notch o una cámara perforada.
+   - Representa el espacio ocupado por un notch o una cámara perforada en dispositivos modernos.
 
-3. **`ime` (Input Method Editor):**
-   - Representa el espacio ocupado por el teclado virtual.
+3. **`ime` (Input Method Editor)**:
+   - Representa el espacio ocupado por el teclado en pantalla (teclado virtual).
 
 4. **`tappableElement`**:
-   - Representa áreas interactuables, como botones de navegación o controles de gestos.
+   - Representa áreas que contienen elementos interactuables, como controles de gestos o botones de navegación.
 
 ---
 
-## Uso de WindowInsets en Kotlin
-
-El objeto **`WindowInsets`** o su compatibilidad **`WindowInsetsCompat`** se utiliza para manejar márgenes relacionados con los insets. El siguiente ejemplo muestra cómo ajustar el padding de una vista en función de los insets:
+### Cómo usar los insets en Android
+En Android, se utiliza el objeto **`WindowInsets`** o su compatibilidad **`WindowInsetsCompat`** para manejar estos márgenes. Por ejemplo:
 
 ```kotlin
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsCompat.Type
-
 ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
-    val systemBarsInsets = insets.getInsets(Type.systemBars())
+    val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
     v.setPadding(
         systemBarsInsets.left,
         systemBarsInsets.top,
@@ -44,16 +39,6 @@ ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
 }
 ```
 
----
+### Resultado
+Este código asegura que el contenido de la aplicación no quede oculto detrás de las barras del sistema u otras áreas no disponibles de la pantalla. Es útil para dispositivos con pantallas modernas, como aquellos con notch o barras de navegación gestual.
 
-## Resultado
-
-Este código asegura que el contenido de la aplicación respete los márgenes ocupados por las barras del sistema u otras áreas no disponibles de la pantalla. Es especialmente útil en dispositivos con:
-
-- **Notch**
-- **Barras de navegación gestual**
-- **Teclado virtual activado**
-
-### Nota
-
-Asegúrate de probar este código en dispositivos con distintas configuraciones de pantalla para verificar que los márgenes se ajusten correctamente. Si deseas realizar un manejo más avanzado, puedes combinar varios tipos de insets utilizando `Type` en el método `getInsets`.
