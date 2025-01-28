@@ -1,0 +1,7 @@
+Variables, valores y constantes
+
+const val moneda = "EUR" - No puede ser reasignado ni crearse de manera local. 
+Se especifica dentro de companion object.
+
+val fecha - Dato que no puede ser reasignado
+var nombre - Dato que puede ser reasignado
