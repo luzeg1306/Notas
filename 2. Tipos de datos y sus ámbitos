@@ -1,0 +1,32 @@
+Tipos de datos y sus ámbitos
+
+*String
+Forma 1:
+var nombre: String = "jota"
+
+Forma 2: 
+var nombre: String
+nombre = "jota"
+
+Concatenación de datos
+println("Hola " + nombre)
+
+*Char
+var inicial: Char = 'J'
+
+*Boolean
+var vip: Boolean = false
+
+*Float
+var saldo: Float = 300.545f
+
+*Int 
+var entero: Int = 62
+
+*Double
+var sueldo = 764.82
+
+
+Conversión de datos
+
+var saludo = "Hola " + saldo.toString()
