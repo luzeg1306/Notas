@@ -1,5 +1,11 @@
 Estructuras de control
 
+*Operadores logicos
+a && b   Y
+a || b   OR
+!a       NEG
+
+
 *IF
 if (vip == true) saludo += ", te queremos mucho"
 else saludo += ", quieres ser vip? paga la cuota"
@@ -18,3 +24,37 @@ else {
 
 
 *WHEN
+
+var mes = fecha.subSequence(3, 5).toString().toInt()
+
+when(mes){
+     1, 2, 3 -> print("\n En invierno no hay ofertas de inversiones")
+     4, 5, 6 -> print("\n En primavera hay ofertas de inversiones, 1.5% interés")
+     7, 8, 9 -> print("\n En verano hay ofertas de inversiones, 2.5% interés")
+     10, 11, 12 -> print("\n En otoño hay ofertas de inversiones, 3.5% interés")
+     else -> print("\n la fecha es erronea")
+}
+
+
+*DO WHILE, WHILE y BREAK
+
+do{ //Ejecutará lo que está dentro del do y seguirá ejecutandose si se cumple el while
+    println("Ingrese el PIN: ")
+    println("Clave ingresada: ${clave_ingresada++}")
+    intentos++
+
+}while(intentos < 3 && clave_ingresada != pin)
+if (intentos == 3) println("Tarjeta bloqueada")
+
+var pin:Int = 1234
+var intentos:Int = 0
+var clave_ingresada:Int = 1232
+
+do{ //Ejecutará lo que está dentro del do y seguirá ejecutandose si se cumple el while
+   println("Ingrese el PIN: ")
+   println("Clave ingresada: ${++clave_ingresada}")
+   if (clave_ingresada == pin) break
+   intentos++
+}while(intentos < 3 && clave_ingresada != pin)
+
+if (intentos == 3) println("Tarjeta bloqueada")
