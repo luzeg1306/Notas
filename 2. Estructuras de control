@@ -1,11 +1,5 @@
 Estructuras de control
 
-*Operadores logicos
-a && b   Y
-a || b   OR
-!a       NEG
-
-
 *IF
 if (vip == true) saludo += ", te queremos mucho"
 else saludo += ", quieres ser vip? paga la cuota"
