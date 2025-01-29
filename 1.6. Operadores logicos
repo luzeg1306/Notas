@@ -1,0 +1,4 @@
+Operadores logicos
+a && b   Y
+a || b   OR
+!a       NEG
