@@ -52,3 +52,23 @@ do{ //Ejecutará lo que está dentro del do y seguirá ejecutandose si se cumple
 }while(intentos < 3 && clave_ingresada != pin)
 
 if (intentos == 3) println("Tarjeta bloqueada")
+
+
+*FOR y FOR ANIDADO
+
+fun recorrer_array(array: Array<String>){
+
+    for (i in array) println(i)
+
+    for (i in array.indices) println(array.get(i))
+
+    for (i in 0 .. array.size - 1)
+         println("${i+1}: ${array.get(i)}")
+}
+
+
+for (i in (0 until matriz.size)){
+     println()
+     for (j in (0 until matriz[i].size))
+          println("Posición[$i][$j] : ${matriz[i][j]}")
+}
