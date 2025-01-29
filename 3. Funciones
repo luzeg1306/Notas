@@ -1,0 +1,36 @@
+Funciones 
+
+*Sintaxis y ámbito
+
+fun mostrar_saldo(){
+    println("Tienes $saldo $moneda ")
+}
+
+fun ingresar_sueldo(){
+    saldo += sueldo
+    println("Se ha ingresado tu sueldo de $sueldo $moneda")
+    mostrar_saldo()
+}
+
+
+*Funciones con parámetros
+
+fun ingresar_dinero(cantidad: Float){
+    saldo += cantidad
+    print("Se ha ingresado $cantidad $moneda")
+    mostrar_saldo()
+}
+
+fun retirar_dinero(cantidad: Float) {
+    saldo -= cantidad
+    print("Se ha retirado $cantidad $moneda")
+    mostrar_saldo()
+}
+
+
+*Funciones con retorno
+
+fun verificarCantidad(cantidad: Float): Boolean{
+    if (cantidad > saldo) return false
+    else return true
+}
