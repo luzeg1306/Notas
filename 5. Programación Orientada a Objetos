@@ -1,0 +1,58 @@
+Programación Orientada a Objetos
+
+*Objetos: Tipo de dato propio
+	-Atributos: Informción del objeto
+	-Métodos: Acciones que se pueden utilizando los atributos
+
+
+*Tipos de constructores:
+Son atributos por defecto
+
+package com.jigglydev.poo
+
+class Person(var name: String = "Anonimo", var passport: String? = null) {
+    var alive: Boolean = true
+
+    fun Person(){
+        name = "Juan"
+        passport = "B123"
+    }
+
+    fun die(){
+        alive = false
+    }
+}
+
+*Encapsulamiento
+Privatización de los datos evitando que se pueda acceder de manera comun
+Se hace uso de metodos
+
+class Pokemon (private var name: String = "Pok",
+               private var attackPower: Float = 30f,
+               private var life: Float = 100f)
+
+*Métodos get y set
+
+package com.jigglydev.poo
+
+class Pokemon (private var name: String = "Pok",
+               private var attackPower: Float = 30f,
+               private var life: Float = 100f) {
+
+    fun Pokemon(n: String, aP: Float){
+        this.name = n
+        this.attackPower = aP
+        this.life = 100f
+    }
+
+    fun getName(): String{ return this.name }
+    fun getAttackPower(): Float{ return this.attackPower }
+    fun getLife(): Float{ return this.life }
+
+    fun setLife(l: Float){ this.life = l }
+
+
+}
+
+*Herencia
+Clases que derivan de otras
