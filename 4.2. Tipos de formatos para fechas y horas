@@ -1,0 +1,120 @@
+Tipos de formatos para fechas y horas
+En Kotlin, puedes trabajar con fechas utilizando la clase LocalDate del paquete java.time. Aquí te dejo algunos formatos de fecha comunes y ejemplos de cómo utilizarlos:
+
+La clase DateTimeFormatter ofrece una amplia gama de opciones para formatear y analizar fechas en Kotlin.
+
+
+Formatos de Fecha:
+
+*Formato completo con día de la semana, mes, día y año:
+
+kotlin
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val fechaHoraActual = LocalDateTime.now()
+    val formatoCompleto = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy")
+ 
+    val fechaFormateada = fechaHoraActual.format(formatoCompleto)
+    println("Fecha y hora actual (formato completo): $fechaFormateada")
+}
+Resultado: Por ejemplo, "Wednesday, January 26, 2024"
+
+*Formato corto con año y mes (yyMM):
+
+kotlin
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val fechaHoraActual = LocalDateTime.now()
+    val formatoCorto = DateTimeFormatter.ofPattern("yyMM")
+ 
+    val fechaFormateada = fechaHoraActual.format(formatoCorto)
+    println("Fecha y hora actual (formato corto): $fechaFormateada")
+}
+Resultado: Por ejemplo, "2401" para enero de 2024.
+
+
+
+*Ejemplos de cómo formatear fechas indicando un patrón específico (puedes usar otros patrones):
+
+**Formato YYYY/MM/DD:
+
+kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val fechaHoy = LocalDate.now()
+    val formatoYYYYMMDD = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+ 
+    val fechaFormateada = fechaHoy.format(formatoYYYYMMDD)
+    println("Fecha actual (formato YYYY/MM/DD): $fechaFormateada")
+}
+Resultado: Por ejemplo, "2024/01/26" para el 26 de enero de 2024.
+
+**Formato DD/MM/YYYY:
+
+kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val fechaHoy = LocalDate.now()
+    val formatoDDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+ 
+    val fechaFormateada = fechaHoy.format(formatoDDMMYYYY)
+    println("Fecha actual (formato DD/MM/YYYY): $fechaFormateada")
+}
+Resultado: Por ejemplo, "26/01/2024" para el 26 de enero de 2024.
+
+**Formato D/M/YY:
+
+kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val fechaHoy = LocalDate.now()
+    val formatoDMyy = DateTimeFormatter.ofPattern("D/M/yy")
+ 
+    val fechaFormateada = fechaHoy.format(formatoDMyy)
+    println("Fecha actual (formato D/M/YY): $fechaFormateada")
+}
+Resultado: La salida variará según la fecha actual, por ejemplo, "26/1/24" para el 26 de enero de 2024. Ten en cuenta que en este formato, los componentes de la fecha y el año pueden tener un solo dígito si son menores de 10.
+
+
+
+*Formatos de Horas:
+
+**Formato de 24 horas con minutos y segundos (HH:mm:ss):
+
+kotlin
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val horaActual = LocalTime.now()
+    val formato24Horas = DateTimeFormatter.ofPattern("HH:mm:ss")
+ 
+    val horaFormateada = horaActual.format(formato24Horas)
+    println("Hora actual (formato 24 horas): $horaFormateada")
+}
+Resultado: Por ejemplo, "15:30:45" para las 3:30:45 PM.
+
+**Formato de 12 horas con AM/PM (hh:mm a):
+
+kotlin
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+ 
+fun main() {
+    val horaActual = LocalTime.now()
+    val formato12Horas = DateTimeFormatter.ofPattern("hh:mm a")
+ 
+    val horaFormateada = horaActual.format(formato12Horas)
+    println("Hora actual (formato 12 horas): $horaFormateada")
+}
+Resultado: Por ejemplo, "03:30 PM" para las 3:30 PM.
