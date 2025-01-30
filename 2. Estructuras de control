@@ -72,3 +72,24 @@ for (i in (0 until matriz.size)){
      for (j in (0 until matriz[i].size))
           println("Posición[$i][$j] : ${matriz[i][j]}")
 }
+
+*WHILE
+
+var empresa: String? = null
+mostrar_saldo()
+var cantidad_a_invertir = 90f
+var index = 0
+
+while(saldo >= cantidad_a_invertir){
+      empresa = bolsa.elementAtOrNull(index)
+      if (empresa != null){
+          saldo -= cantidad_a_invertir
+          println("Se ha invertido $cantidad_a_invertir $moneda en $empresa")
+          inversiones.put(empresa, cantidad_a_invertir)
+      }
+      else break
+
+      index ++
+}
+println(inversiones)
+
